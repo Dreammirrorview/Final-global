@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page</title>
+    <style>
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #1a237e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        .hidden {
+            display: none !important;
+        }
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+        }
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <div id="loadingScreen" class="loading-screen">
+        <h1>Loading...</h1>
+    </div>
+    
+    <div id="loginPage" class="page">
+        <h1>Login Page</h1>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            console.log('Hiding loading screen');
+            const loadingScreen = document.getElementById('loadingScreen');
+            if (loadingScreen) {
+                loadingScreen.classList.add('hidden');
+            }
+            
+            const loginPage = document.getElementById('loginPage');
+            if (loginPage) {
+                loginPage.classList.add('active');
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
